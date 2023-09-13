@@ -3,5 +3,5 @@ def print_sorted_dictionary(a_dictionary):
     '''
         description: sort dictionary keys
     '''
-    for k, v in (dict(sorted((a_dictionary.items()))).items()):
+    for k, v in sorted((a_dictionary.items())):
         print(f"{k}: {v}")
