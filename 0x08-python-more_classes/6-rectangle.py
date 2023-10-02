@@ -3,6 +3,11 @@
 
 
 class Rectangle:
+    '''
+    creates a rectangle
+    class variables:
+    number_of_instances
+    '''
     number_of_instances = 0
     '''creates an empty class'''
     def __init__(self, width=0, height=0):
