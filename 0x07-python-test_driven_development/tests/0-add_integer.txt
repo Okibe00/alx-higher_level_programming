@@ -14,8 +14,10 @@ test module
 Traceback (most recent call last):
 ...
 TypeError
->>> add_integer(1e308, 2) > 1e308 # doctest: +IGNORE_EXCEPTION_DETAIL
-True
+>>> add_integer(1e308, 2) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+OverflowError
 >>> add_integer(-1, -2)
 -3
 >>> add_integer("okibe", -2) # doctest: +IGNORE_EXCEPTION_DETAIL

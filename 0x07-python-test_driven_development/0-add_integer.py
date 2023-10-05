@@ -19,6 +19,11 @@ def add_integer(a, b=98):
     if type(b) != float and type(b) != int:
         raise TypeError("b must be an integer")
 
-    num1 = int(a)
-    num2 = int(b)
+    try:
+        num1 = int(a)
+        num2 = int(b)
+    except (ValueError, NameError, TypeError):
+        raise ValueError("not a number")
+    if num1 + 1 > 1e308 or num2 + 1 > 1e308:
+        raise OverflowError("value too large")
     return num1 + num2
