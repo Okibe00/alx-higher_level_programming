@@ -12,7 +12,7 @@ def matrix_divided(matrix, div):
             div: divisor
         Return: matrix of quotients
     '''
-    if type(matrix[0]) != list:
+    if not isinstance(matrix[0], list):
         raise TypeError
     else:
         row_s = len(matrix[0])
@@ -31,7 +31,7 @@ def matrix_divided(matrix, div):
             val = matrix[i][j]
             if not isinstance(val, (float, int)):
                 raise TypeError('matrix must be a matrix' +
-                                '(list of lists) of integers/floats')
+                                '(array of arrays of integers/floats)')
             try:
                 quotient = round(val / div, 2)
             except Exception:
