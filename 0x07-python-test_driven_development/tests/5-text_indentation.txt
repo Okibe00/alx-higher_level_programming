@@ -1,0 +1,32 @@
+##################################
+TEST SUITE FOR PRINT_TEXT FUNCTION
+##################################
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+################################
+TEST IF TEXT IS A STRING
+################################
+
+>>> text_indentation(25)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+################################
+TEST WHEN ARGS ARE NOT PASSED
+################################
+
+>>> text_indentation() # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+################################
+CORRECT INPUT
+################################
+
+>>> text_indentation("OKIBE.ONMEJE")
+OKIBE.
+<BLANKLINE>
+ONMEJE
+
