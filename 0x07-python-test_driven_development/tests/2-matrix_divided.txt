@@ -1,0 +1,83 @@
+'''
+test suite for matrix divide function
+'''
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+###################################
+divide by zero error
+###################################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+>>> matrix_divided(matrix0, 0) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+ZeroDivisionError
+
+######################################################
+check if matrix is a list of list of integer and floats
+#######################################################
+>>> matrix0 = [2,[4, 5, 6],[7, 8, 9]]
+>>> matrix_divided(matrix0, 2) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+#############################################
+check if every element is an int or float
+#############################################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6],[7, 8, "5"]]
+>>> matrix_divided(matrix0, 2) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+##################################
+check if each row is the same size
+##################################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6],[7, 5]]
+>>> matrix_divided(matrix0, 2) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+>>> matrix0 = [[1, 2, 3],[4, 5, 6, 20],[7, 8, 5]]
+>>> matrix_divided(matrix0, 2) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+##########################
+check if div is an integer
+##########################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6],[7, 8, 5]]
+>>> matrix_divided(matrix0, '2') # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+##################
+test correct input
+##################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6]]
+>>> matrix_divided(matrix0, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+###################################
+check if div is not a number
+###################################
+>>> matrix0 = [[1, 2, 3],[4, 5, 6],[7, 8, 5]]
+>>> matrix_divided(matrix0, '2') # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+>>> matrix_divided(matrix0) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+>>> matrix_divided('2') # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+...
+TypeError
+
+
+
