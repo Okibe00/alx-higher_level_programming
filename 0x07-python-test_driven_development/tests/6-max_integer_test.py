@@ -23,3 +23,12 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_one_elem_list(self):
         self.assertEqual(max_integer([1]), 1)
+
+    def test_max_int_mid_list(self):
+        self.assertEqual(max_integer([10, 1000, 80]), 1000)
+
+    def test_one_neg_list(self):
+        self.assertEqual(max_integer([1, 2, -2, 5]), 5)
+
+    def test_all_neg_list(self):
+        self.assertEqual(max_integer([-2, -5, -9, -1]), -1)
