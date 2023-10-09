@@ -1,0 +1,21 @@
+###########################
+test file for list class
+###########################
+>>> MyList = __import__('1-my_list').MyList
+>>> l = MyList([5, 4, 3, 2, 1])
+>>> l.print_sorted()
+[1, 2, 3, 4, 5]
+>>> p = MyList()
+>>> p.append(5)
+>>> p.append(4)
+>>> p.append(3)
+>>> p.append(2)
+>>> p.append(1)
+>>> p.print_sorted()
+[1, 2, 3, 4, 5]
+>>> e = MyList([])
+>>> e.print_sorted()
+[]
+>>> e = MyList()
+>>> e.print_sorted()
+[]
