@@ -12,8 +12,7 @@ def inherits_from(obj, a_class):
         a_class: class
     Return: True or False
     '''
-    lx = obj.__class__
-    while lx is not None:
-        if lx == a_class:
-            return True
-        lx = lx.__base__
+    if isinstance(obj, a_class) and issubclass(obj.__class__, a_class):
+        return True
+    else:
+        return False
