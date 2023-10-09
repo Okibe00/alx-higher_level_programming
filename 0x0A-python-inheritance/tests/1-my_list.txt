@@ -19,3 +19,6 @@ test file for list class
 >>> e = MyList()
 >>> e.print_sorted()
 []
+>>> e = MyList([-1, -2, -3, -4, -5])
+>>> e.print_sorted()
+[-5, -4, -3, -2, -1]
