@@ -17,8 +17,13 @@ def add_items():
     for i in range(1, num_arg):
         item_list.append(sys.argv[i])
     else:
-        save_to_json_file(item_list, "add_item.json")
-        return load_from_json_file("add_item.json")
+        try:
+            item_list = load_from_json_file("add_item.json") + item_list
+        except Exception:
+            pass
+        finally:
+            save_to_json_file(item_list, "add_item.json")
+            return load_from_json_file("add_item.json")
 
 
 if __name__ == "__main__":
