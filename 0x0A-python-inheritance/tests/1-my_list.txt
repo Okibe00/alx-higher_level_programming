@@ -5,6 +5,7 @@ test file for list class
 >>> l = MyList([5, 4, 3, 2, 1])
 >>> l.print_sorted()
 [1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 >>> p = MyList()
 >>> p.append(5)
 >>> p.append(4)
@@ -13,12 +14,17 @@ test file for list class
 >>> p.append(1)
 >>> p.print_sorted()
 [1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
 >>> e = MyList([])
 >>> e.print_sorted()
+[]
 []
 >>> e = MyList()
 >>> e.print_sorted()
 []
+[]
 >>> e = MyList([-1, -2, -3, -4, -5])
 >>> e.print_sorted()
 [-5, -4, -3, -2, -1]
+[-5, -4, -3, -2, -1]
+

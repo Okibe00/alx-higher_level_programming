@@ -10,7 +10,6 @@ class MyList(list):
         Attr:
             list: list object
     '''
-
     def __init__(self, *args):
         super().__init__(*args)
 
@@ -18,5 +17,13 @@ class MyList(list):
         '''
             prints list
         '''
-        sort_list = self
-        print(sorted(sort_list))
+        sort_list = sorted(self)
+        print(sort_list)
+        return sort_list
+
+        def __str__(self):
+            '''
+            prints string rep
+            '''
+            new_l = sorted(self)
+            return super(Mylist, new_l).__str__()
