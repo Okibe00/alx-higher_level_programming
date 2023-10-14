@@ -52,7 +52,10 @@ class Rectangle(Base):
             prints a rectangle
         '''
         for i in range(self.__height):
-            print("#" * self.__width)
+            if i == 0:
+                print("\n" * self.__y, end="")
+            format_str = " " * self.__x + "#" * self.__width
+            print(format_str)
 
     def area(self):
         return self.__width * self.__height
