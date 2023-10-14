@@ -40,12 +40,25 @@ class Rectangle(Base):
 
         return value
 
+    def update(self, *args):
+        for i, v in enumerate(args):
+            if i == 0:
+                self.id = self.integer_validator("id", v)
+            elif i == 1:
+                self.width = v
+            elif i == 2:
+                self.height = v
+            elif i == 3:
+                self.x = v
+            elif i == 4:
+                self.y = v
+
     def __str__(self):
         '''
         print string representation of Rectangle
         '''
-        return f"[{self.__class__.__name__}] ({self.id})\
-                {self.x}/{self.y} - {self.width} / {self.height}"
+        return (f"[{self.__class__.__name__}] ({self.id})" +
+                f" {self.x}/{self.y} - {self.width}/{self.height}")
 
     def display(self):
         '''
