@@ -40,6 +40,9 @@ class Rectangle(Base):
 
         return value
 
+    def area(self):
+        return self.__width * self.__height
+
     @property
     def width(self):
         return self.__width

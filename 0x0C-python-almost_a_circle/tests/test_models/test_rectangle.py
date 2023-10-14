@@ -13,8 +13,18 @@ class test_rectangle(unittest.TestCase):
     def setUp(self):
         self.r1 = Rectangle(5, 1)
 
+        '''test area values'''
+        self.ar1 = Rectangle(3, 2)
+        self.ar2 = Rectangle(2, 10)
+        self.ar3 = Rectangle(5, 2)
+
     def tearDown(self):
         pass
+
+    def test_area(self):
+        self.assertEqual(self.ar1.area(), 6)
+        self.assertEqual(self.ar2.area(), 20)
+        self.assertEqual(self.ar3.area(), 10)
 
     def test_id(self):
         self.r3 = Rectangle(2, 5, 0, 0, 25)
