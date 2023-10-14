@@ -40,6 +40,13 @@ class Rectangle(Base):
 
         return value
 
+    def display(self):
+        '''
+            prints a rectangle
+        '''
+        for i in range(self.__height):
+            print("#" * self.__width)
+
     def area(self):
         return self.__width * self.__height
 
