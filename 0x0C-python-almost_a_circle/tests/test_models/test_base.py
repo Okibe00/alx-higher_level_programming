@@ -3,7 +3,7 @@
 test module
 '''
 
-import base
+from models import base
 import unittest
 
 
@@ -42,7 +42,3 @@ class test_base(unittest.TestCase):
         self.assertEqual(self.bg1.id, 200)
         self.assertEqual(self.bg2.id, 0)
         self.assertNotEqual(self.bg3.id, -1)
-
-
-if __name__ == "__main__":
-    unittest.main()
