@@ -40,18 +40,31 @@ class Rectangle(Base):
 
         return value
 
-    def update(self, *args):
-        for i, v in enumerate(args):
-            if i == 0:
-                self.id = self.integer_validator("id", v)
-            elif i == 1:
-                self.width = v
-            elif i == 2:
-                self.height = v
-            elif i == 3:
-                self.x = v
-            elif i == 4:
-                self.y = v
+    def update(self, *args, **kwargs):
+        if args is not None and len(args) != 0:
+            for i, v in enumerate(args):
+                if i == 0:
+                    self.id = self.integer_validator("id", v)
+                elif i == 1:
+                    self.width = v
+                elif i == 2:
+                    self.height = v
+                elif i == 3:
+                    self.x = v
+                elif i == 4:
+                    self.y = v
+        else:
+            for k, v in kwargs.items():
+                if k == 'id':
+                    self.id = self.integer_validator("id", v)
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def __str__(self):
         '''
