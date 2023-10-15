@@ -16,6 +16,22 @@ class Base():
     def __init__(self, id=None):
         self.id = id
 
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''
+        save json to file
+        '''
+        cls_name = cls.__name__ + '.json'
+        list_dic = list()
+
+        if isinstance(list_objs, list):
+            for i in list_objs:
+                list_dic.append(i.to_dictionary())
+
+        string = cls.to_json_string(list_dic)
+        with open(cls_name, 'w', encoding="utf-8") as fd:
+            fd.write(string)
+
     @staticmethod
     def to_json_string(list_dictionaries):
         '''
