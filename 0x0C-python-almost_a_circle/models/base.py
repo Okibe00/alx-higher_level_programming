@@ -3,6 +3,8 @@
 base class module
 '''
 
+import json
+
 
 class Base():
     '''
@@ -13,6 +15,17 @@ class Base():
 
     def __init__(self, id=None):
         self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        '''
+        converts object to json
+        '''
+        if isinstance(list_dictionaries, list) and len(list_dictionaries) != 0:
+            json_str = json.dumps(list_dictionaries)
+            return json_str
+        else:
+            return "[]"
 
     @property
     def id(self):
