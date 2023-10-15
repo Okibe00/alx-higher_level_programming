@@ -17,6 +17,30 @@ class Square(Rectangle):
         self.size = size
         super().__init__(width=size, height=size, x=x, y=y, id=None)
 
+    def update(self, *args, **kwargs):
+        if args is not None and len(args) != 0:
+            for i, v in enumerate(args):
+                if i == 0:
+                    self.id = self.integer_validator("id", v)
+                elif i == 1:
+                    self.width = v
+                    self.height = v
+                elif i == 2:
+                    self.x = v
+                elif i == 3:
+                    self.y = v
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = self.integer_validator("id", v)
+                elif k == "size":
+                    self.width = v
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+
     @property
     def size(self):
         return self.width
