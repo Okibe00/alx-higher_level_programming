@@ -17,7 +17,17 @@ class Square(Rectangle):
         self.size = size
         super().__init__(width=size, height=size, x=x, y=y, id=None)
 
+    def to_dictionary(self):
+        '''
+        returns dictionary representation of square
+        '''
+        return {"id": self.id, "size": self.size,
+                "x": self.x, "y": self.y}
+
     def update(self, *args, **kwargs):
+        '''
+        update class attributes
+        '''
         if args is not None and len(args) != 0:
             for i, v in enumerate(args):
                 if i == 0:
