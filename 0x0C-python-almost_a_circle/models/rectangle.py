@@ -2,7 +2,7 @@
 '''
 Module creates a Rectangle class that inherits from Base
 '''
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -14,10 +14,10 @@ class Rectangle(Base):
             initialization method
         '''
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
 
     def to_dictionary(self):
@@ -91,36 +91,63 @@ class Rectangle(Base):
             print(format_str)
 
     def area(self):
+        '''
+        set area
+        '''
         return self.__width * self.__height
 
     @property
     def width(self):
+        '''
+        get the width
+        '''
         return self.__width
 
     @property
     def height(self):
+        '''
+        get the height
+        '''
         return self.__height
 
     @property
     def x(self):
+        '''
+        get the x coordinate
+        '''
         return self.__x
 
     @property
     def y(self):
+        '''
+        get the y coordinate
+        '''
         return self.__y
 
     @width.setter
     def width(self, width):
+        '''
+        set the width
+        '''
         self.__width = self.integer_validator("width", width)
 
     @height.setter
     def height(self, height):
+        '''
+        set the height
+        '''
         self.__height = self.integer_validator("height", height)
 
     @x.setter
     def x(self, x):
+        '''
+        set the x value
+        '''
         self.__x = self.integer_validator("x", x)
 
     @y.setter
     def y(self, y):
+        '''
+        set the y value
+        '''
         self.__y = self.integer_validator("y", y)
