@@ -32,6 +32,16 @@ class Base():
         with open(cls_name, 'w', encoding="utf-8") as fd:
             fd.write(string)
 
+    def from_json_string(json_string):
+        '''
+        return list of string representaion\
+        of json_string
+        '''
+        if json_string is not None:
+            return json.loads(json_string)
+        else:
+            return []
+
     @staticmethod
     def to_json_string(list_dictionaries):
         '''
