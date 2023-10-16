@@ -17,11 +17,17 @@ class Base():
         self.id = id
 
     @classmethod
+    def create(cls, **dictionary):
+        inst = cls(2, 2, 2, 2)
+        inst.update(**dictionary)
+        return inst
+
+    @classmethod
     def save_to_file(cls, list_objs):
         '''
         save json to file
         '''
-        cls_name = cls.__name__ + '.json'
+        cls_name = cls.__base__ + '.json'
         list_dic = list()
 
         if isinstance(list_objs, list):

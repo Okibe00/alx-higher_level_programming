@@ -48,7 +48,7 @@ class Rectangle(Base):
         return value
 
     def update(self, *args, **kwargs):
-        if args is not None and len(args) != 0:
+        if len(args) != 0 and isinstance(args[0], int):
             for i, v in enumerate(args):
                 if i == 0:
                     self.id = self.integer_validator("id", v)
