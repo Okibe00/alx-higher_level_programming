@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-'''
-Module creates a Rectangle class that inherits from Base
-'''
-from base import Base
+"""Module creates a Rectangle class that inherits from Base"""
+
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -48,6 +47,9 @@ class Rectangle(Base):
         return value
 
     def update(self, *args, **kwargs):
+        '''
+        updates the value of attributes
+        '''
         if len(args) != 0 and isinstance(args[0], int):
             for i, v in enumerate(args):
                 if i == 0:
