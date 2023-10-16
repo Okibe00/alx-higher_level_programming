@@ -17,6 +17,23 @@ class Base():
         self.id = id
 
     @classmethod
+    def load_from_file(cls):
+        '''
+        returns a list of instances
+        '''
+        file_name = cls.__name__+'.json'
+        try:
+            with open(file_name, 'r', encoding='utf-8') as fd:
+                string = fd.read()
+                list_obj = cls.from_json_string(string)
+                list_inst = list()
+                for obj in list_obj:
+                    list_inst.append(cls.create(**obj))
+                return list_inst
+        except Exception:
+            return []
+
+    @classmethod
     def create(cls, **dictionary):
         inst = cls(2, 2, 2, 2)
         inst.update(**dictionary)
@@ -27,7 +44,7 @@ class Base():
         '''
         save json to file
         '''
-        cls_name = cls.__base__ + '.json'
+        cls_name = cls.__name__ + '.json'
         list_dic = list()
 
         if isinstance(list_objs, list):
