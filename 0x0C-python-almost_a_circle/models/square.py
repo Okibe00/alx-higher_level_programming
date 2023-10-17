@@ -15,7 +15,7 @@ class Square(Rectangle):
         initialiazation method
         '''
         self.size = size
-        super().__init__(width=size, height=size, x=x, y=y, id=None)
+        super().__init__(width=size, height=size, x=x, y=y, id=id)
 
     def to_dictionary(self):
         '''
