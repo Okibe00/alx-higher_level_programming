@@ -70,11 +70,11 @@ class Base():
         '''
         converts object to json
         '''
-        if isinstance(list_dictionaries, list) and len(list_dictionaries) != 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
             json_str = json.dumps(list_dictionaries)
             return json_str
-        else:
-            return "[]"
 
     @property
     def id(self):
