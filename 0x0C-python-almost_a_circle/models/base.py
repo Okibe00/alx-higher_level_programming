@@ -35,8 +35,15 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        inst = cls(2, 2, 2, 2)
-        inst.update(**dictionary)
+        '''
+         creates a new class
+        '''
+        if cls.__name__ == 'Rectangle':
+            inst = cls(2, 2)
+            inst.update(**dictionary)
+        if cls.__name__ == 'Square':
+            inst = cls(2)
+            inst.update(**dictionary)
         return inst
 
     @classmethod
