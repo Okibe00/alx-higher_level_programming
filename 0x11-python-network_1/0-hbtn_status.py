@@ -12,8 +12,8 @@ if __name__ == '__main__':
             page_type = type(page)
             page_encoding = page.decode('utf-8')
             print("Body response:")
-            print(f'\t - type: {page_type}')
-            print(f'\t - content: {page}')
-            print(f'\t - utf8 content: {page_encoding}')
+            print('\t- type: {}'.format(page_type))
+            print('\t- content: {}'.format(page))
+            print('\t- utf8 content: {}'.format(page_encoding))
     except Exception as e:
         print(e)
